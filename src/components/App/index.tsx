@@ -1,10 +1,12 @@
 import React from 'react';
-import LogoContainer from '../LogoContainer';
+import HeaderContainer from '../HeaderContainer';
+import ContentContainer from '../ContentContainer';
 
 const App: React.FC = () => {
   return (
     <div className="app">
-      <LogoContainer />
+      <HeaderContainer />
+      <ContentContainer />
     </div>
   );
 }
