@@ -10,7 +10,7 @@ const FiltersContainer: React.FC = () => {
 
   return <div className="filters-container">
     <Filter name={transfers_count.name}>
-      <TransfersCountFilter />
+      <TransfersCountFilter items={transfers_count.items} />
     </Filter>
   </div>;
 }

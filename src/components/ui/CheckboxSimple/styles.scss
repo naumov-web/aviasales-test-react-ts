@@ -1,0 +1,15 @@
+@import "../../../styles/variables.scss";
+
+.checkbox-simple {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $grey-color;
+}
+
+.checkbox-simple_checked {
+  border-color: $main-blue;
+}
