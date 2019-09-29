@@ -1,5 +1,5 @@
 import React from 'react';
-import { IHandbookItem } from '../../config/contracts/handbooks';
+import { IHandbookItem } from '../../config/contracts/IHandbookItem';
 import HoverLineBlock from '../hocs/HoverLineBlock';
 import FilterLine from './FilterLine';
 import CheckboxWithLabel from '../ui/CheckboxWithLabel';

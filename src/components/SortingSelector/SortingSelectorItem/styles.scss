@@ -1,0 +1,29 @@
+@import "../../../styles/variables.scss";
+
+.sorting-selector-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  box-sizing: border-box;
+  background-color: $white;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 1px solid $grey-light-color;
+}
+
+.sorting-selector-item_first {
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+
+.sorting-selector-item_last {
+  border-radius: 0 5px 5px 0;
+}
+
+.sorting-selector-item_selected {
+  color: $white;
+  background-color: $main-blue;
+  border: 1px solid $main-blue;
+}

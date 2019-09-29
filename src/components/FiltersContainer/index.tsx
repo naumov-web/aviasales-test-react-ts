@@ -2,7 +2,7 @@ import React from 'react';
 import Filter from '../hocs/Filter';
 import { filters } from '../../config/handbooks';
 import TransfersCountFilter from '../TransfersCountFilter';
-import { ITransfersCount } from '../../config/contracts/handbooks';
+import { ITransfersCount } from '../../config/contracts/ITransfersCount';
 
 const FiltersContainer: React.FC = () => {
 
