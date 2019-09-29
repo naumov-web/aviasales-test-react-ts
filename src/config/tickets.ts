@@ -1,4 +1,4 @@
-import { ITicket } from './../models/contracts/ITicket';
+import { ITicket } from '../models/contracts/ITicket';
 
 export const tickets : Array<ITicket> = [
   {

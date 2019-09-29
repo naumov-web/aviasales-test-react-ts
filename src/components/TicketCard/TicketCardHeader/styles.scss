@@ -1,0 +1,6 @@
+.ticket-card-header {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+}
