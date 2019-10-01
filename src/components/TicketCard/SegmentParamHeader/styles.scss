@@ -1,0 +1,10 @@
+@import "../../../styles/variables.scss";
+
+.segment-param-header {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: $grey-middle-color;
+}
