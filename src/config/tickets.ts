@@ -21,5 +21,26 @@ export const tickets : Array<ITicket> = [
         duration: 36000
       }
     ]
+  },
+  {
+    price: 17600,
+    carrier: 'AF',
+    logo_url: 'http://pics.avs.io/99/36/AF.png',
+    segments: [
+      {
+        origin: 'MOW',
+        destination: 'HKT',
+        date: '2019-10-01 17:30:00',
+        stops: ['HKG', 'JNB'],
+        duration: 29000
+      },
+      {
+        origin: 'HKT',
+        destination: 'MOW',
+        date: '2019-10-10 20:30:00',
+        stops: ['HKG'],
+        duration: 37000
+      }
+    ]
   }
 ];
