@@ -1,0 +1,1 @@
+export default (code : string) => `http://pics.avs.io/99/36/${code}.png`;

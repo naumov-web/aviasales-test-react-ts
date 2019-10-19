@@ -14,6 +14,7 @@ const SortingSelector: React.FC<ISortingSelector> = ({ selectors } : ISortingSel
               selected={index === 0}
               isFirst={index === 0}
               isLast={index === selectors.length - 1} 
+              key={`sorting-selector-item-${index}`}
             />;
   });
 

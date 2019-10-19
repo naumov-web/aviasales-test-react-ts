@@ -4,10 +4,10 @@ import TicketsContainer from '../../TicketsContainer';
 
 import './styles.scss';
 
-const CenterColContainer: React.FC = () => {
+const CenterColContainer: React.FC = ({ tickets } : any) => {
   return <div className="center-col-container">
     <SortingContainer />
-    <TicketsContainer />
+    <TicketsContainer tickets={tickets} />
   </div>;
 }
 

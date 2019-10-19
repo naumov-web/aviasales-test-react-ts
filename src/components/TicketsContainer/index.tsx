@@ -1,12 +1,16 @@
 import React from 'react';
 import TicketCard from '../TicketCard';
-import { tickets } from '../../config/tickets';
 
 import './styles.scss';
+import { ITicket } from '../../models/contracts/ITicket';
 
-const TicketsContainer: React.FC = () => {
-  const itemsJSX = tickets.map((item) => {
-    return <TicketCard {...item} />
+interface ITicketsContainer {
+  tickets : Array<ITicket>;
+};
+
+const TicketsContainer: React.FC<ITicketsContainer> = ({ tickets } : ITicketsContainer) => {
+  const itemsJSX = tickets.map((item, index) => {
+    return <TicketCard key={`ticket-card-${index}`} {...item} />
   });
   return <div className="tickets-container">
     {itemsJSX}

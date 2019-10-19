@@ -1,15 +1,17 @@
+import { ITicket } from "../../models/contracts/ITicket";
+
 export interface ITicketsState {
   search_id: string | null;
-  tickets: Array<Object>;
+  tickets: Array<ITicket>;
   is_stopped: boolean;
 };
 
-export interface ISearchIdRequest {
-  type: string;
-}
-
 export interface ISearchIdSuccess {
   type: string;
+  search_id: string | null;
 }
 
-export type TicketActionTypes = ISearchIdRequest | ISearchIdSuccess;
+export interface ITicketsSuccess {
+  type: string;
+  tickets: Array<ITicket>;
+}

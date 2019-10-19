@@ -10,8 +10,8 @@ interface ISegments {
 
 const Segments: React.FC<ISegments> = ({ segments } : ISegments) => {
   return <div className="segments">
-    {segments.map((item) => {
-      return <Segment {...item} />
+    {segments.map((item, index) => {
+      return <Segment key={`segment-${index}`} {...item} />
     })}
   </div>;
 };
