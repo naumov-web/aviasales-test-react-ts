@@ -1,0 +1,1 @@
+export const API_BASE : string = 'https://front-test.beta.aviasales.ru';
