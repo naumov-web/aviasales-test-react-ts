@@ -12,9 +12,9 @@ interface ITransfersCountFilter {
 
 const TransfersCountFilter: React.FC<ITransfersCountFilter> = ({ items } : ITransfersCountFilter) => {
   return <div className="transfers-count-filter">
-    {items.map((item) => {
-      return <HoverLineBlock>
-        <FilterLine>
+    {items.map((item, index) => {
+      return <HoverLineBlock key={`filter-hover-line-${index}`}>
+        <FilterLine key={`filter-line-${index}`}>
           <CheckboxWithLabel 
             checked={false} 
             title={item.name}
