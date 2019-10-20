@@ -1,9 +1,11 @@
 import { ITicketsState } from './contracts';
-import { GET_SEARCH_ID_SUCCESS, GET_TICKETS_SUCCESS } from './actionTypes';
+import { GET_SEARCH_ID_SUCCESS, GET_TICKETS_SUCCESS, SET_SORT, SET_FILTERS } from './actionTypes';
 
 const initialState: ITicketsState = {
   tickets: [],
   search_id: null,
+  sort: 'fast',
+  filters: [],
   is_stopped: false
 }
 
@@ -18,6 +20,16 @@ export default (state = initialState, action: any) : ITicketsState => {
       return {
         ...state,
         tickets : action.tickets
+      };
+    case SET_SORT:
+      return {
+        ...state,
+        sort : action.sort
+      };
+    case SET_FILTERS:
+      return {
+        ...state,
+        sort : action.filters
       };
     default:
       return state
