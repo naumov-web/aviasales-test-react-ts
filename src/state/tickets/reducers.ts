@@ -29,7 +29,7 @@ export default (state = initialState, action: any) : ITicketsState => {
     case SET_FILTERS:
       return {
         ...state,
-        sort : action.filters
+        filters : action.filters
       };
     default:
       return state

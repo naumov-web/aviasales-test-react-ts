@@ -1,29 +1,42 @@
-import React from 'react';
-import { IHandbookItem } from '../../config/contracts/IHandbookItem';
-import HoverLineBlock from '../hocs/HoverLineBlock';
-import FilterLine from './FilterLine';
-import CheckboxWithLabel from '../ui/CheckboxWithLabel';
+import { connect } from 'react-redux';
+import { compose, withHandlers } from 'recompose';
+// Components
+import TransfersCountFilter from './TransfersCountFilter';
+// Redux
+import { IState } from '../../state/contracts';
+import { getFilters } from '../../state/tickets/selectors';
+import { createSetFiltersAction } from '../../state/tickets/actionCreators';
+// Handbook
+import { filters } from '../../config/handbooks';
 
-import './styles.scss';
-
-interface ITransfersCountFilter {
-  items: Array<IHandbookItem>;
+const mapStateToProps = (state : IState) => {
+  return {
+    items: filters.transfers_count.items,
+    filters: getFilters(state)
+  };
 };
 
-const TransfersCountFilter: React.FC<ITransfersCountFilter> = ({ items } : ITransfersCountFilter) => {
-  return <div className="transfers-count-filter">
-    {items.map((item, index) => {
-      return <HoverLineBlock key={`filter-hover-line-${index}`}>
-        <FilterLine key={`filter-line-${index}`}>
-          <CheckboxWithLabel 
-            checked={false} 
-            title={item.name}
-            value={item.id.toString()}
-          />
-        </FilterLine>
-      </HoverLineBlock>;
-    })}
-  </div>;
-}
+const handlers = withHandlers({
+  onCheckboxClick: (props : any) => (id : Number) => {
+    const { filters, dispatch } = props;
+    if (filters.indexOf(id) === -1) {
 
-export default TransfersCountFilter;
+      const new_filters = filters.map((item : Number) => item);
+
+      dispatch(
+        createSetFiltersAction(
+          new_filters.concat([id])
+        )
+      );
+    } else {
+      dispatch(
+        createSetFiltersAction(filters.filter((item : Number) => item !== id))
+      )
+    }
+  }
+});
+
+export default compose(
+  connect(mapStateToProps),
+  handlers
+)(TransfersCountFilter);
